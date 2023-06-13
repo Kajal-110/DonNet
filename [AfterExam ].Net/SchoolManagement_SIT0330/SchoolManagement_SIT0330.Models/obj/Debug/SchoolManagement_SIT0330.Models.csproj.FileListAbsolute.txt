@@ -1,0 +1,24 @@
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\SchoolManagement_SIT0330.Models.dll.config
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\SchoolManagement_SIT0330.Models.dll
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\SchoolManagement_SIT0330.Models.pdb
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.dll
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.xml
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.csproj.AssemblyReference.cache
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.csproj.CopyComplete
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.dll
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\SchoolManagement_SIT0330.Models.dll.config
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\SchoolManagement_SIT0330.Models.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\SchoolManagement_SIT0330.Models.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.xml
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.csproj.AssemblyReference.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.csproj.CopyComplete
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Models\obj\Debug\SchoolManagement_SIT0330.Models.pdb

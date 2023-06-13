@@ -1,0 +1,83 @@
+﻿@model SchoolManagement_SIT0330.Models.Model.UserModel
+
+@{
+    ViewBag.Title = "GetUserById";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetUserById</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ConfirmPasword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmPasword)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @*@if (model => model.Role == 1)
+            {
+                <span> Admin</span>
+            }
+            else if (model.Role == 2)
+            {
+                <span>Manager</span>
+            }
+            else
+            {
+                <span>Customer</span>
+            }*@
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+    </dl>
+</div>

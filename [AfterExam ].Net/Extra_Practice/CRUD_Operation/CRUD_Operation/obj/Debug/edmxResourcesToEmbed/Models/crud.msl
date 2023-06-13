@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CRUD_DBModelStoreContainer" CdmEntityContainer="CRUD_DBContext">
+    <EntitySetMapping Name="Student_Record">
+      <EntityTypeMapping TypeName="CRUD_DBModel.Student_Record">
+        <MappingFragment StoreEntitySet="Student_Record">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Standerd" ColumnName="Standerd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

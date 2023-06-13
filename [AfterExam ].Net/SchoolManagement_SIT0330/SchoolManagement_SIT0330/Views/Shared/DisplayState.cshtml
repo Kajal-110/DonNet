@@ -1,0 +1,13 @@
+﻿@model SchoolManagement_SIT0330.Models.Context.State
+
+
+<option value=""> --Select State --</option>
+@if (ViewBag.StateList != null)
+{
+    foreach (var i in ViewBag.StateList)
+    {
+        <option value="@i.Value"> @i.Text</option>
+    }
+}
+
+

@@ -1,0 +1,7 @@
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\bin\Debug\CRUD_Operation _In_Console.exe.config
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\bin\Debug\CRUD_Operation _In_Console.exe
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\bin\Debug\CRUD_Operation _In_Console.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\obj\Debug\CRUD_Operation _In_Console.csproj.AssemblyReference.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\obj\Debug\CRUD_Operation _In_Console.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\obj\Debug\CRUD_Operation _In_Console.exe
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\C#\CRUD_Operation _In_Console\CRUD_Operation _In_Console\obj\Debug\CRUD_Operation _In_Console.pdb

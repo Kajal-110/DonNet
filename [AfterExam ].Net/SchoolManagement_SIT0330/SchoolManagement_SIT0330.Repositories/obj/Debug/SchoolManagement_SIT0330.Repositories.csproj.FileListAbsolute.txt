@@ -1,0 +1,6 @@
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Repositories\bin\Debug\SchoolManagement_SIT0330.Repositories.dll
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Repositories\bin\Debug\SchoolManagement_SIT0330.Repositories.pdb
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Repositories\obj\Debug\SchoolManagement_SIT0330.Repositories.csproj.AssemblyReference.cache
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Repositories\obj\Debug\SchoolManagement_SIT0330.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Repositories\obj\Debug\SchoolManagement_SIT0330.Repositories.dll
+C:\Users\SIT349\source\repos\SchoolManagement_SIT0330\SchoolManagement_SIT0330.Repositories\obj\Debug\SchoolManagement_SIT0330.Repositories.pdb

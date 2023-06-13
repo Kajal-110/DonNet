@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="xyzModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="companyId" />
+    </Key>
+    <Property Name="companyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="People" Relationship="Self.FK__Person__companyI__398D8EEE" FromRole="Company" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="personId" />
+    </Key>
+    <Property Name="personId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="personName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="companyId" Type="Int32" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__Person__companyI__398D8EEE" FromRole="Person" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK__Person__companyI__398D8EEE">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="companyId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="companyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="xyzEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <AssociationSet Name="FK__Person__companyI__398D8EEE" Association="Self.FK__Person__companyI__398D8EEE">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <EntitySet Name="Countries" EntityType="xyzModel.Country" />
+    <EntitySet Name="States" EntityType="xyzModel.State" />
+    <AssociationSet Name="FK__State__CountryId__4BAC3F29" Association="xyzModel.FK__State__CountryId__4BAC3F29">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <EntitySet Name="Cities" EntityType="xyzModel.City" />
+    <AssociationSet Name="FK__City__StateId__4E88ABD4" Association="xyzModel.FK__City__StateId__4E88ABD4">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="States" Relationship="xyzModel.FK__State__CountryId__4BAC3F29" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="xyzModel.FK__State__CountryId__4BAC3F29" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Cities" Relationship="xyzModel.FK__City__StateId__4E88ABD4" FromRole="State" ToRole="City" />
+  </EntityType>
+  <Association Name="FK__State__CountryId__4BAC3F29">
+    <End Type="xyzModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="xyzModel.State" Role="State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <NavigationProperty Name="State" Relationship="xyzModel.FK__City__StateId__4E88ABD4" FromRole="City" ToRole="State" />
+  </EntityType>
+  <Association Name="FK__City__StateId__4E88ABD4">
+    <End Type="xyzModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="xyzModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

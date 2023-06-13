@@ -1,0 +1,12 @@
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\Theam_Login_Register.Helpers.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\Theam_Login_Register.Helpers.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\Theam_Login_Register.Models.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\Theam_Login_Register.Models.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\Theam_Login_Register.Models.dll.config
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\obj\Debug\Theam_Login_Register.Helpers.csproj.AssemblyReference.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\obj\Debug\Theam_Login_Register.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\obj\Debug\Theam_Login_Register.Helpers.csproj.CopyComplete
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\obj\Debug\Theam_Login_Register.Helpers.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Theam_Login_Register\Theam_Login_Register.Helpers\obj\Debug\Theam_Login_Register.Helpers.pdb

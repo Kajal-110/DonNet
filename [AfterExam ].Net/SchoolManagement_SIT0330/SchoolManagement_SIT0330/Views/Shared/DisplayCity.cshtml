@@ -1,0 +1,12 @@
+﻿@model SchoolManagement_SIT0330.Models.Context.City
+
+
+<option value=""> --Select City --</option>
+@if (ViewBag.CityList != null)
+{
+    foreach (var i in ViewBag.CityList)
+    {
+        <option value="@i.Value"> @i.Text</option>
+    }
+}
+

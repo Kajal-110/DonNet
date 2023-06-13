@@ -1,0 +1,61 @@
+﻿<!--@model Theam_Login_Register.DBcontext.Users
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}-->
+
+@*<h2>Details</h2>*@
+<!--<table class="table">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>FullName</th>
+            <th>Email</th>-->
+            @*<th>Role</th>*@
+            <!--<th>Password</th>
+           
+        </tr>
+    </thead>
+   
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Email)
+            </td>-->
+            @*@foreach(var item in Model){
+            <td>
+
+                @if (item.Role == 1)
+                {
+                    <span>Super Admin</span>
+                }
+                else if (item.Role == 2)
+                {
+                    <span>Admin</span>
+                }
+                else
+                {
+                    <span>Customer</span>
+                }
+            </td>
+            }*@
+            <!--<td>
+                @Html.DisplayFor(model => model.Password)
+            </td>
+        </tr>
+    </tbody>
+   
+</table>-->
+
+
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

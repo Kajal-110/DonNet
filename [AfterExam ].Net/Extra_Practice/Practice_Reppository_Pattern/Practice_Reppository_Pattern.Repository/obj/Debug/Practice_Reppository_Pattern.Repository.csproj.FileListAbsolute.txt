@@ -1,0 +1,15 @@
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\Practice_Reppository_Pattern.Repository.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\Practice_Reppository_Pattern.Repository.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\obj\Debug\Practice_Reppository_Pattern.Repository.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\obj\Debug\Practice_Reppository_Pattern.Repository.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\obj\Debug\Practice_Reppository_Pattern.Repository.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\Practice_Reppository_Pattern.Repository.dll.config
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\EntityFramework.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\Practice_Reppository_Pattern.Models.dll
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\Practice_Reppository_Pattern.Models.pdb
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\Practice_Reppository_Pattern.Models.dll.config
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\EntityFramework.xml
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\obj\Debug\Practice_Reppository_Pattern.Repository.csproj.AssemblyReference.cache
+C:\Users\SIT349\Documents\Kajal\[AfterExam ].Net\Extra_Practice\Practice_Reppository_Pattern\Practice_Reppository_Pattern.Repository\obj\Debug\Practice_Reppository_Pattern.Repository.csproj.CopyComplete

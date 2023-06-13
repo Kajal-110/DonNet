@@ -1,0 +1,40 @@
+﻿@model List<ViewBag_TempData.Models.Student>
+@{
+    ViewBag.Title = "About";
+    
+}
+
+
+<h2>@ViewBag.Name1</h2>
+@TempData["Today"]
+@*@{TempData.Keep("Today");}*@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>PostalCode</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var std in Model)
+            {
+                <tr>
+                    <td>@std.Id</td>
+                    <td>@std.Name</td>
+                    <td>@std.Address</td>
+                    <td>@std.PostalCode</td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+
+
+@Html.Partial("~/Views/Shared/Partial.cshtml")

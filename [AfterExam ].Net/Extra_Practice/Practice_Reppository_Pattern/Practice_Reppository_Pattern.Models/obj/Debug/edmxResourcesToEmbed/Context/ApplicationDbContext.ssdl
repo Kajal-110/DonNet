@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kajalpatel5_13_2023Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CouponCodeMaster">
+    <Key>
+      <PropertyRef Name="CouponId" />
+    </Key>
+    <Property Name="CouponId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CouponCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CouponType" Type="int" Nullable="false" />
+    <Property Name="CouponFlatAmount" Type="int" />
+    <Property Name="CouponPercentage" Type="int" />
+    <Property Name="CouponExpiryDate" Type="date" Nullable="false" />
+    <Property Name="CouponUsageLimit" Type="int" Nullable="false" />
+    <Property Name="CouponIsActive" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="LoginInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" />
+    <Property Name="couponCode" Type="int" />
+    <Property Name="itemId" Type="int" />
+    <Property Name="OrderDate" Type="date" Nullable="false" />
+    <Property Name="OrderTotalQuantity" Type="int" />
+    <Property Name="orderAmount" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="AfterGST" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="TotalPayable" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="SGST" Type="int" />
+    <Property Name="CGST" Type="int" />
+  </EntityType>
+  <Association Name="FK__order__couponCod__76969D2E">
+    <End Role="CouponCodeMaster" Type="Self.CouponCodeMaster" Multiplicity="0..1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CouponCodeMaster">
+        <PropertyRef Name="CouponId" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="couponCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order__userId__75A278F5">
+    <End Role="LoginInformation" Type="Self.LoginInformation" Multiplicity="0..1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoginInformation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Kajalpatel5_13_2023ModelStoreContainer">
+    <EntitySet Name="CouponCodeMaster" EntityType="Self.CouponCodeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="item" EntityType="Self.item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginInformation" EntityType="Self.LoginInformation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__order__couponCod__76969D2E" Association="Self.FK__order__couponCod__76969D2E">
+      <End Role="CouponCodeMaster" EntitySet="CouponCodeMaster" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order__userId__75A278F5" Association="Self.FK__order__userId__75A278F5">
+      <End Role="LoginInformation" EntitySet="LoginInformation" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

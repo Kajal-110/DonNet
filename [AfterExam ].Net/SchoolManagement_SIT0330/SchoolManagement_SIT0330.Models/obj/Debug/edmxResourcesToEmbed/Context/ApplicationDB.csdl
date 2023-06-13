@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KajalPatel_SIT0330Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ConfirmPasword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="KajalPatel_SIT0330Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Cities" EntityType="KajalPatel_SIT0330Model.City" />
+    <EntitySet Name="Countries" EntityType="KajalPatel_SIT0330Model.Country" />
+    <EntitySet Name="Standards" EntityType="KajalPatel_SIT0330Model.Standard" />
+    <EntitySet Name="States" EntityType="KajalPatel_SIT0330Model.State" />
+    <EntitySet Name="subjects" EntityType="KajalPatel_SIT0330Model.subject" />
+    <AssociationSet Name="FK__City__CountryId__628FA481" Association="KajalPatel_SIT0330Model.FK__City__CountryId__628FA481">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__StateId__619B8048" Association="KajalPatel_SIT0330Model.FK__City__StateId__619B8048">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__State__CountryId__5EBF139D" Association="KajalPatel_SIT0330Model.FK__State__CountryId__5EBF139D">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <EntitySet Name="Teacher1Set" EntityType="KajalPatel_SIT0330Model.Teacher1" />
+    <AssociationSet Name="FK__Teacher__CityId__6FE99F9F" Association="KajalPatel_SIT0330Model.FK__Teacher__CityId__6FE99F9F">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Teacher1" EntitySet="Teacher1Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teacher__Country__71D1E811" Association="KajalPatel_SIT0330Model.FK__Teacher__Country__71D1E811">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Teacher1" EntitySet="Teacher1Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teacher__Standar__72C60C4A" Association="KajalPatel_SIT0330Model.FK__Teacher__Standar__72C60C4A">
+      <End Role="Standard" EntitySet="Standards" />
+      <End Role="Teacher1" EntitySet="Teacher1Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teacher__StateId__70DDC3D8" Association="KajalPatel_SIT0330Model.FK__Teacher__StateId__70DDC3D8">
+      <End Role="State" EntitySet="States" />
+      <End Role="Teacher1" EntitySet="Teacher1Set" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Teacher__Subject__73BA3083" Association="KajalPatel_SIT0330Model.FK__Teacher__Subject__73BA3083">
+      <End Role="subject" EntitySet="subjects" />
+      <End Role="Teacher1" EntitySet="Teacher1Set" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="KajalPatel_SIT0330Model.FK__City__CountryId__628FA481" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="KajalPatel_SIT0330Model.FK__City__StateId__619B8048" FromRole="City" ToRole="State" />
+    <NavigationProperty Name="Teacher" Relationship="KajalPatel_SIT0330Model.FK__Teacher__CityId__6FE99F9F" FromRole="City" ToRole="Teacher1" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cities" Relationship="KajalPatel_SIT0330Model.FK__City__CountryId__628FA481" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="States" Relationship="KajalPatel_SIT0330Model.FK__State__CountryId__5EBF139D" FromRole="Country" ToRole="State" />
+    <NavigationProperty Name="Teacher" Relationship="KajalPatel_SIT0330Model.FK__Teacher__Country__71D1E811" FromRole="Country" ToRole="Teacher1" />
+  </EntityType>
+  <EntityType Name="Standard">
+    <Key>
+      <PropertyRef Name="StandardId" />
+    </Key>
+    <Property Name="StandardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StandardName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Teacher" Relationship="KajalPatel_SIT0330Model.FK__Teacher__Standar__72C60C4A" FromRole="Standard" ToRole="Teacher1" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <NavigationProperty Name="Cities" Relationship="KajalPatel_SIT0330Model.FK__City__StateId__619B8048" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="KajalPatel_SIT0330Model.FK__State__CountryId__5EBF139D" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Teacher" Relationship="KajalPatel_SIT0330Model.FK__Teacher__StateId__70DDC3D8" FromRole="State" ToRole="Teacher1" />
+  </EntityType>
+  <EntityType Name="subject">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="SubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Teacher" Relationship="KajalPatel_SIT0330Model.FK__Teacher__Subject__73BA3083" FromRole="subject" ToRole="Teacher1" />
+  </EntityType>
+  <Association Name="FK__City__CountryId__628FA481">
+    <End Type="KajalPatel_SIT0330Model.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__StateId__619B8048">
+    <End Type="KajalPatel_SIT0330Model.State" Role="State" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__State__CountryId__5EBF139D">
+    <End Type="KajalPatel_SIT0330Model.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.State" Role="State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Teacher1">
+    <Key>
+      <PropertyRef Name="TeacherId" />
+    </Key>
+    <Property Name="TeacherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="StandardId" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <NavigationProperty Name="City" Relationship="KajalPatel_SIT0330Model.FK__Teacher__CityId__6FE99F9F" FromRole="Teacher1" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="KajalPatel_SIT0330Model.FK__Teacher__Country__71D1E811" FromRole="Teacher1" ToRole="Country" />
+    <NavigationProperty Name="Standard" Relationship="KajalPatel_SIT0330Model.FK__Teacher__Standar__72C60C4A" FromRole="Teacher1" ToRole="Standard" />
+    <NavigationProperty Name="State" Relationship="KajalPatel_SIT0330Model.FK__Teacher__StateId__70DDC3D8" FromRole="Teacher1" ToRole="State" />
+    <NavigationProperty Name="subject" Relationship="KajalPatel_SIT0330Model.FK__Teacher__Subject__73BA3083" FromRole="Teacher1" ToRole="subject" />
+  </EntityType>
+  <Association Name="FK__Teacher__CityId__6FE99F9F">
+    <End Type="KajalPatel_SIT0330Model.City" Role="City" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.Teacher1" Role="Teacher1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Teacher1">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teacher__Country__71D1E811">
+    <End Type="KajalPatel_SIT0330Model.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.Teacher1" Role="Teacher1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Teacher1">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teacher__Standar__72C60C4A">
+    <End Type="KajalPatel_SIT0330Model.Standard" Role="Standard" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.Teacher1" Role="Teacher1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Standard">
+        <PropertyRef Name="StandardId" />
+      </Principal>
+      <Dependent Role="Teacher1">
+        <PropertyRef Name="StandardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teacher__StateId__70DDC3D8">
+    <End Type="KajalPatel_SIT0330Model.State" Role="State" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.Teacher1" Role="Teacher1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="Teacher1">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Teacher__Subject__73BA3083">
+    <End Type="KajalPatel_SIT0330Model.subject" Role="subject" Multiplicity="0..1" />
+    <End Type="KajalPatel_SIT0330Model.Teacher1" Role="Teacher1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subject">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="Teacher1">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

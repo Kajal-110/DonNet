@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SchoolManagement_SIT0330.Models.Model.UserModel>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+          
+            Action
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ConfirmPasword)
+        </td>*@
+    <td>
+        @if (item.Role == 1)
+        {
+            <span> Admin</span>
+        }
+        else if (item.Role == 2)
+        {
+            <span>Manager</span>
+        }
+        else
+        {
+            <span>Customer</span>
+        }
+       
+    </td>
+    <td>
+        @*<a href="/Register/Edit" class="btn btn-danger btn-sm" id = item.UserId >Edit</a>*@
+
+        @*<button class="btn btn-danger btn-sm"><abbr></abbr>Edit</button>*@
+        @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+        @Html.ActionLink("UserDetail", "GetUserById", new { UserId = item.UserId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+    </td>
+    </tr>
+}
+
+</table>

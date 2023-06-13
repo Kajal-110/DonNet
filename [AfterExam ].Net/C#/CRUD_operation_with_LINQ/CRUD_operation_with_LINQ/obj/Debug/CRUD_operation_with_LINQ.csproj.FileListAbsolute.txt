@@ -1,0 +1,7 @@
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\bin\Debug\CRUD_operation_with_LINQ.exe.config
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\bin\Debug\CRUD_operation_with_LINQ.exe
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\bin\Debug\CRUD_operation_with_LINQ.pdb
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\obj\Debug\CRUD_operation_with_LINQ.csproj.AssemblyReference.cache
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\obj\Debug\CRUD_operation_with_LINQ.csproj.CoreCompileInputs.cache
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\obj\Debug\CRUD_operation_with_LINQ.exe
+C:\Users\SIT349\source\repos\CRUD_operation_with_LINQ\CRUD_operation_with_LINQ\obj\Debug\CRUD_operation_with_LINQ.pdb

@@ -1,0 +1,152 @@
+﻿@model Login_Registration.Models.UserDetail
+
+@{
+    ViewBag.Title = "UserProfile";
+}
+
+<h2>UserProfile</h2>
+
+@using (Html.BeginForm("UserProfile", "Home" ,FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+  
+<div class="row">
+
+
+    <div class="form-horizontal col-sm-6 mt-3">
+        <h4>UserDetail</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.UserId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <lable class="radio-inline">
+                    @Html.RadioButtonFor(model => model.Gender, "Male", new { @name = "Gender" })
+                    Male
+                </lable>
+                <lable class="radio-inline">
+                    @Html.RadioButtonFor(model => model.Gender, "Female", new { @name = "Gender" })
+                    Female
+                </lable>
+
+
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Interest
+            </label>
+            <div class="col-md-10">
+                <label class="checkbox-inline">
+                    @*@Html.CheckBox("Csharp", Model.IsintrestedinCSharp.Value)*@
+
+                    @if (Model.IsintrestedinCSharp == true)
+                        {
+                            @Html.CheckBox("Csharp", true)
+                        }
+                        else
+                        {
+                            @Html.CheckBox("Csharp", false)
+                        }
+
+                    C#
+                </label>
+                <label class="checkbox-inline">
+                    @if (Model.IsintrestedinJava == true)
+                        {
+                            @Html.CheckBox("Java", true)
+                        }
+                        else
+                        {
+                            @Html.CheckBox("Java", false)
+                        }
+                    @*@Html.CheckBox("Java", Model.IsintrestedinJava.Value)*@
+
+                    Java
+                </label>
+                <label class="checkbox-inline">
+                    @if (Model.IsintrestedinPython == true)
+                        {
+                            @Html.CheckBox("Python", true)
+                        }
+                        else
+                        {
+                            @Html.CheckBox("Python", false)
+                        }
+
+                    @*@Html.CheckBox("Python", Model.IsintrestedinPython.Value)*@
+
+                    Python
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                City
+            </label>
+            <div class="col-md-10">
+                @*@Html.DropDownListFor(Model => Model.CityId, ViewBag.CityName as SelectList, "--select City--", new { @class = "form-control" })*@
+                @Html.DropDownListFor(Model => Model.CityId, Model.CityList as SelectList, "--select City--", new { @class = "form-control" })
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Date of Birth
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control datetime" } })
+                @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div>
+            <div class="user-profile-image">
+                <input type="file" />
+                @*<img src="~/Content/Theam/OIP.jpg" />*@
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

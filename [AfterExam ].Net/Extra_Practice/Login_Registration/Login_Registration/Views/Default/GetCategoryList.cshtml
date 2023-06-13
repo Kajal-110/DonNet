@@ -1,0 +1,150 @@
+﻿
+@model List<Login_Registration.Models.Product>
+    @{
+        ViewBag.Title = "GetCategoryList";
+    }
+
+    @*<h2>@ViewBag.count</h2>*@
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            @using (Html.BeginForm("GetCategoryList", "Default", FormMethod.Post))
+            {
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Search :</label>
+                        <div class="col-md-6">
+                            <input type="text" name="searchText" class="form-control" placeholder="Search your text here" style="max-width:100%" />
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-info" type="submit"><span class="glyphicon glyphicon-search "></span>Search</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row">
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        @*<th>Name</th>*@
+                        <th>@Html.ActionLink("Name", "GetCategoryList", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "Name", PageNumber = ViewBag.PageNumber == 0 ? 1 : ViewBag.PageNumber })</th>
+                        @*<th>Color</th>*@
+                        <th>@Html.ActionLink("Color", "GetCategoryList", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortBy = "Color", PageNumber = ViewBag.PageNumber == 0 ? 1 : ViewBag.PageNumber })</th>
+
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                @foreach (var i in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@i.Name</td>
+                            <td>@i.Color</td>
+                            <td>@i.Price</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", "Default", new { @id = i.Id }, htmlAttributes: new { @class = "btn btn-primary btn-sm" })
+                                @Html.ActionLink("Delete", "Delete", "Default", new { @id = i.Id }, htmlAttributes: new { @class = "btn btn-danger btn-sm ", onclick = "return deletebtn()" })
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+
+            </table>
+
+
+            @{
+                double totalpages = ViewBag.TotalPages;
+
+                if (totalpages > 1)
+                {
+                    <ul class="pagination">
+                        @if (ViewBag.PageNumber == 1)
+                        {
+                            <li>
+                                @Html.ActionLink("Previous", "GetCategoryList", new
+                                {
+                                    SortOrder = ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder,
+                                                        SortBy = ViewBag.SortBy == null ? "Name" : ViewBag.SortBy,
+                                    PageNumber = ViewBag.PageNumber
+                                })
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink("Previous", "GetCategoryList", new
+                                {
+                                    SortOrder = ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder,
+                                                        SortBy = ViewBag.SortBy == null ? "Name" : ViewBag.SortBy,
+                                    PageNumber = ViewBag.PageNumber - 1
+                                })
+                            </li>
+                        }
+
+
+                        @for (int i = 1; i <= totalpages; i++)
+                        {
+                            if (i == ViewBag.PageNumber)
+                            {
+                                <li class="active">
+
+                                    @Html.ActionLink(i.ToString(), "GetCategoryList", new
+                                    {
+                                        SortOrder = ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder,
+                                                                SortBy = ViewBag.SortBy == null ? "Name" : ViewBag.SortBy,
+                                        PageNumber = i
+                                    })
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    @Html.ActionLink(i.ToString(), "GetCategoryList", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder, SortBy = ViewBag.SortBy == null ? "Name" : ViewBag.SortBy, PageNumber = i })
+                                </li>
+                            }
+                        }
+
+                        @if (ViewBag.PageNumber == totalpages)
+                        {
+                            <li>
+                                @Html.ActionLink("Next", "GetCategoryList", new
+                                {
+                                    SortOrder = ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder,
+                               SortBy = ViewBag.SortBy == null ? "Name" : ViewBag.SortBy,
+                                    PageNumber = ViewBag.PageNumber
+                                })
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.ActionLink("Next", "GetCategoryList", new
+                                {
+                                    SortOrder = ViewBag.SortOrder == null ? "Asc" : ViewBag.SortOrder,
+                               SortBy = ViewBag.SortBy == null ? "Name" : ViewBag.SortBy,
+                                    PageNumber = ViewBag.PageNumber + 1
+                                })
+                            </li>
+                        }
+                    </ul>
+                }
+
+            }
+
+        </div>
+    </div>
+
+    <script>
+
+        function deletebtn() {
+            return confirm("Are you sure you want to delete this record .....");
+        }
+
+    </script>

@@ -1,0 +1,94 @@
+﻿
+<!--@model Theam_Login_Register.Models.UsersModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+
+<div class="hold-transition register-page">
+    <div class="register-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Register a new membership</p>
+
+                <form action="/Login/Register" method="post">
+                    <div class="input-group mb-3">
+                        @Html.TextBoxFor(model => model.FullName ,new { @class= "form-control", placeholder = "FullName", name = "FullName" ,Type="text" })
+                        
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                <div class="input-group mb-3">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email", name = "Email" , Type = "Email" })
+                   
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                <div class="input-group mb-3">
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Password", name = "Password" ,type="password"})  
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <div class="input-group mb-3">
+                    @Html.PasswordFor(model => model.Confirm_Password ,new { @class = "form-control", placeholder = "Confirm_Password", name = "Confirm_Password", type = "password" })
+                 
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                    @Html.ValidationMessageFor(model => model.Confirm_Password, "", new { @class = "text-danger" })
+
+                    <select class="form-control mb-3" name="Role">
+                        <option selected disabled value="" class=" input-group-text">---select role---</option>
+                        <option value="1" name="admin">Admin</option>
+                        <option value="2" name="manager">Manager</option>
+                        <option value="3" name="customer">Customer</option>
+                    </select>
+
+                    <div class="row">
+                        <div class="col-8">
+
+                        </div>-->
+                        <!-- /.col -->
+                        <!--<div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block" value="Submit">Register</button>
+                        </div>-->
+                        <!-- /.col -->
+                    <!--</div>
+                </form>
+
+                @Html.ActionLink("I already have a membership", "Login")
+
+
+
+            </div>-->
+            <!-- /.form-box -->
+        <!--</div>--><!-- /.card -->
+    <!--</div>
+
+</div>
+
+
+@Scripts.Render("~/bundles/jquery")
+
+@Scripts.Render("~/bundles/jqueryval")-->
+
+

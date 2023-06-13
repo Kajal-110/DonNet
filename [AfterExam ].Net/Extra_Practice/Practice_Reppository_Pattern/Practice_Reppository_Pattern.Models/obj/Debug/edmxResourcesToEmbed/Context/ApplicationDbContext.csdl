@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Kajalpatel5_13_2023Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="LoginInformation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Kajalpatel5_13_2023Model.FK__order__userId__75A278F5" FromRole="LoginInformation" ToRole="order" />
+  </EntityType>
+  <EntityContainer Name="Kajalpatel5_13_2023Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="item" EntityType="Self.item" />
+    <EntitySet Name="LoginInformation" EntityType="Self.LoginInformation" />
+    <EntitySet Name="CouponCodeMaster" EntityType="Kajalpatel5_13_2023Model.CouponCodeMaster" />
+    <EntitySet Name="order" EntityType="Kajalpatel5_13_2023Model.order" />
+    <AssociationSet Name="FK__order__couponCod__76969D2E" Association="Kajalpatel5_13_2023Model.FK__order__couponCod__76969D2E">
+      <End Role="CouponCodeMaster" EntitySet="CouponCodeMaster" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__order__userId__75A278F5" Association="Kajalpatel5_13_2023Model.FK__order__userId__75A278F5">
+      <End Role="LoginInformation" EntitySet="LoginInformation" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CouponCodeMaster">
+    <Key>
+      <PropertyRef Name="CouponId" />
+    </Key>
+    <Property Name="CouponId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CouponCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CouponType" Type="Int32" Nullable="false" />
+    <Property Name="CouponFlatAmount" Type="Int32" />
+    <Property Name="CouponPercentage" Type="Int32" />
+    <Property Name="CouponExpiryDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CouponUsageLimit" Type="Int32" Nullable="false" />
+    <Property Name="CouponIsActive" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Kajalpatel5_13_2023Model.FK__order__couponCod__76969D2E" FromRole="CouponCodeMaster" ToRole="order" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="couponCode" Type="Int32" />
+    <Property Name="itemId" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderTotalQuantity" Type="Int32" />
+    <Property Name="orderAmount" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="AfterGST" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="TotalPayable" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="SGST" Type="Int32" />
+    <Property Name="CGST" Type="Int32" />
+    <NavigationProperty Name="CouponCodeMaster" Relationship="Kajalpatel5_13_2023Model.FK__order__couponCod__76969D2E" FromRole="order" ToRole="CouponCodeMaster" />
+    <NavigationProperty Name="LoginInformation" Relationship="Kajalpatel5_13_2023Model.FK__order__userId__75A278F5" FromRole="order" ToRole="LoginInformation" />
+  </EntityType>
+  <Association Name="FK__order__couponCod__76969D2E">
+    <End Type="Kajalpatel5_13_2023Model.CouponCodeMaster" Role="CouponCodeMaster" Multiplicity="0..1" />
+    <End Type="Kajalpatel5_13_2023Model.order" Role="order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CouponCodeMaster">
+        <PropertyRef Name="CouponId" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="couponCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__order__userId__75A278F5">
+    <End Type="Kajalpatel5_13_2023Model.LoginInformation" Role="LoginInformation" Multiplicity="0..1" />
+    <End Type="Kajalpatel5_13_2023Model.order" Role="order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoginInformation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

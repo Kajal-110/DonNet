@@ -1,0 +1,20 @@
+﻿
+@model ViewBag_TempData.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Name</h2>
+
+
+<ul>
+    <li>@Model.Id</li>
+    <li>@Model.Name</li>
+    <li>@Model.Address</li>
+    <li>@Model.PostalCode</li>
+</ul>
+
+
+
+@Html.Partial("~/Views/Shared/Partial.cshtml")

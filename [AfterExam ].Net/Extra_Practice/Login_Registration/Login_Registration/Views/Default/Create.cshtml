@@ -1,0 +1,49 @@
+﻿@model Login_Registration.Models.Product
+@{
+    ViewBag.Title = "Create";
+}
+
+<style>
+    h4 {
+        color: mediumvioletred
+    }
+</style>
+<h2>Create</h2>
+@if (TempData["Message"] != null)
+{
+    <h4>@TempData["Message"].ToString()</h4>
+}
+
+@*Pass data from view to controller using action and method post*@
+<form action="/Default/Create" method="post">
+    <div class="mb-3 mt-3">
+        <label class="form-label">Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Name" name="name">
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Color:</label>
+        <input type="text" class="form-control" placeholder="Enter Color" name="color">
+        @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price:</label>
+        <input type="number" class="form-control" placeholder="Enter Price" name="price">
+        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br />
+<br />
+
+<br />
+
+@Html.ActionLink("Go to List", "GetCategoryList", "Default")
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
